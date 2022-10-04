@@ -1,0 +1,4 @@
+1. Stworzenie klasy, która przyjmie "n" oraz 
+2. W konstruktorze stworzenie pętli, która wszystuje wszystkie liczby a1, ... , an
+3. Przyjęcie ilości testów, zrobienie pętli która tyle razy stworzy obiekt.
+4. 
