@@ -11,18 +11,28 @@ class Liczby
     public:
     Liczby (int iloscLiczb)
     {
-        liczby.push_back(iloscLiczb);
         for (int i=0; i<iloscLiczb; i++)
         {
-            cin >> liczby[i];
+            int wczytanaDana;
+            cin >> wczytanaDana;
+            liczby.push_back(wczytanaDana);
         }
     }
+
     void wyznaczNNW()
     {
-        cout <<liczby[0] << endl;
-        cout <<liczby[1] << endl;
-        cout <<liczby[2] << endl;
+        vector<vector<int>> czynnikiPierwsze;
+        for (int i=0; i<liczby.size(); i++)
+        {
+            rozlozNaCzynnikiPierwsze(liczby[i]);
+        }
     }
+
+    void rozlozNaCzynnikiPierwsze(int liczba)
+    {
+
+    }
+
 };
 
 
