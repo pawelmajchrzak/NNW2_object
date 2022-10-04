@@ -1,0 +1,6 @@
+1. Stworzenie klasy, która przyjmie "n" oraz 
+2. W konstruktorze stworzenie pętli, która wszystuje wszystkie liczby a1, ... , an
+3. Przyjęcie ilości testów, zrobienie pętli która tyle razy stworzy obiekt.
+4. Znalezienie rozkładu na czynniki pierwsze każdej liczby i zapisanie ich w wektorach
+5. Stworzenie warunku że gdy znajdą się wszystkie takie same dzielniki to usunąć je.
+6. Pozostałe dzielniki przemnożyć ze sobą -> dadzą nnw

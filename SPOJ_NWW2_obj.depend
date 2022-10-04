@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1664918041 source:c:\users\pawel\documents\test\spoj_nww2_obj\main.cpp
+	<iostream>
+	<vector>
+
