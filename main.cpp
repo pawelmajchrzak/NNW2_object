@@ -25,6 +25,7 @@ class Liczby
 
 
         int nwd=liczby[0];
+        int nww=1;
         bool flaga=true;
 
         for (int i=0; i<liczby.size(); i++)
@@ -54,8 +55,12 @@ class Liczby
                 nwd--;
             }
         }
-        cout << nwd;
-
+        cout << nwd << endl;
+        for (int i=0; i<liczby.size(); i++)
+        {
+            nww*=liczby[i]/nwd;
+        }
+        cout << nww << endl;
     }
 /*
     void rozlozNaCzynnikiPierwsze(int liczba)
