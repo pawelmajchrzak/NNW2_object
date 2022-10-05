@@ -19,20 +19,60 @@ class Liczby
         }
     }
 
-    void wyznaczNNW()
+    void wyznaczNWW()
     {
         vector<vector<int>> czynnikiPierwsze;
+
+
+        int nwd=liczby[0];
+        bool flaga=true;
+
         for (int i=0; i<liczby.size(); i++)
         {
-            rozlozNaCzynnikiPierwsze(liczby[i]);
+            if (nwd >> liczby[i])
+            {
+                nwd = liczby[i];
+            }
+            //rozlozNaCzynnikiPierwsze(liczby[i]);
         }
-    }
+        while (flaga != false)
+        {
+            for (int i=0; i<liczby.size(); i++)
+            {
+                if(liczby[i]%nwd != 0)
+                {
+                    flaga=false;
+                }
+            }
+            if (flaga == true)
+            {
+                flaga = false;
+            }
+            else
+            {
+                flaga = true;
+                nwd--;
+            }
+        }
+        cout << nwd;
 
+    }
+/*
     void rozlozNaCzynnikiPierwsze(int liczba)
     {
-
+        int i = 2;
+        while (n != 1)
+        {
+            while (n % i == 0)
+            {
+                czynnikiPierwsze[0][]
+                cout << i << "\n";
+                n = n / i;
+            }
+            ++i;
+        }
     }
-
+*/
 };
 
 
@@ -46,7 +86,7 @@ int main()
             int iloscLiczb;
             cin >> iloscLiczb;
             Liczby zestaw(iloscLiczb);
-            zestaw.wyznaczNNW();
+            zestaw.wyznaczNWW();
         }
     return 0;
 }
