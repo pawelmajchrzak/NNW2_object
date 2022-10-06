@@ -6,38 +6,27 @@ using namespace std;
 class Liczby
 {
     private:
-    vector <int> liczby;
+    vector <long long> liczby;
 
     public:
     Liczby (int iloscLiczb)
     {
         for (int i=0; i<iloscLiczb; i++)
         {
-            int wczytanaDana;
+            long long wczytanaDana;
             cin >> wczytanaDana;
             liczby.push_back(wczytanaDana);
         }
     }
 
-    void wyznaczNWW()
+    long long wyznaczNWW()
     {
-        vector<vector<int>> czynnikiPierwsze;
+        long long nww=1;
+        bool flaga=false;
 
-
-        int nwd=liczby[0];
-        int nww=1;
-        bool flaga=true;
-
-        for (int i=0; i<liczby.size(); i++)
+        while (flaga != true)
         {
-            if (nwd >> liczby[i])
-            {
-                nwd = liczby[i];
-            }
-            //rozlozNaCzynnikiPierwsze(liczby[i]);
-        }
-        while (flaga != false)
-        {
+            flaga=true;
             for (int i=0; i<liczby.size(); i++)
             {
                 if(nww%liczby[i] != 0)
@@ -45,39 +34,15 @@ class Liczby
                     flaga=false;
                 }
             }
-            if (flaga == true)
+            if (flaga == false)
             {
-                flaga = false;
-            }
-            else
-            {
-                flaga = true;
                 nww++;
             }
         }
-        //cout << nwd << endl;
-        //for (int i=0; i<liczby.size(); i++)
-        //{
-         //   nww*=liczby[i]/nwd;
-        //}
-        cout << nww << endl;
+
+        return nww;
     }
-/*
-    void rozlozNaCzynnikiPierwsze(int liczba)
-    {
-        int i = 2;
-        while (n != 1)
-        {
-            while (n % i == 0)
-            {
-                czynnikiPierwsze[0][]
-                cout << i << "\n";
-                n = n / i;
-            }
-            ++i;
-        }
-    }
-*/
+
 };
 
 
@@ -91,7 +56,8 @@ int main()
             int iloscLiczb;
             cin >> iloscLiczb;
             Liczby zestaw(iloscLiczb);
-            zestaw.wyznaczNWW();
+            cout << zestaw.wyznaczNWW() << endl;
+
         }
     return 0;
 }
