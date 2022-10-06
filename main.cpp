@@ -6,23 +6,43 @@ using namespace std;
 class Liczby
 {
     private:
-    vector <int> liczby;
+    vector <long long> liczby;
 
     public:
     Liczby (int iloscLiczb)
     {
-        liczby.push_back(iloscLiczb);
         for (int i=0; i<iloscLiczb; i++)
         {
-            cin >> liczby[i];
+            long long wczytanaDana;
+            cin >> wczytanaDana;
+            liczby.push_back(wczytanaDana);
         }
     }
-    void wyznaczNNW()
+
+    long long wyznaczNWW()
     {
-        cout <<liczby[0] << endl;
-        cout <<liczby[1] << endl;
-        cout <<liczby[2] << endl;
+        long long nww=1;
+        bool flaga=false;
+
+        while (flaga != true)
+        {
+            flaga=true;
+            for (int i=0; i<liczby.size(); i++)
+            {
+                if(nww%liczby[i] != 0)
+                {
+                    flaga=false;
+                }
+            }
+            if (flaga == false)
+            {
+                nww++;
+            }
+        }
+
+        return nww;
     }
+
 };
 
 
@@ -36,7 +56,8 @@ int main()
             int iloscLiczb;
             cin >> iloscLiczb;
             Liczby zestaw(iloscLiczb);
-            zestaw.wyznaczNNW();
+            cout << zestaw.wyznaczNWW() << endl;
+
         }
     return 0;
 }
