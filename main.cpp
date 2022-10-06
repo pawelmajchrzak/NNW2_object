@@ -40,7 +40,7 @@ class Liczby
         {
             for (int i=0; i<liczby.size(); i++)
             {
-                if(liczby[i]%nwd != 0)
+                if(nww%liczby[i] != 0)
                 {
                     flaga=false;
                 }
@@ -52,14 +52,14 @@ class Liczby
             else
             {
                 flaga = true;
-                nwd--;
+                nww++;
             }
         }
-        cout << nwd << endl;
-        for (int i=0; i<liczby.size(); i++)
-        {
-            nww*=liczby[i]/nwd;
-        }
+        //cout << nwd << endl;
+        //for (int i=0; i<liczby.size(); i++)
+        //{
+         //   nww*=liczby[i]/nwd;
+        //}
         cout << nww << endl;
     }
 /*
