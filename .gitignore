@@ -1,1 +1,4 @@
-
+bin/
+obj/
+SPOJ_NWW2_obj.depend
+SPOJ_NWW2_obj.layout
