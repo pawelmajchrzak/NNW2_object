@@ -6,28 +6,34 @@ using namespace std;
 class Liczby
 {
     private:
-    vector <long long> liczby;
+    vector <unsigned long long> liczby;
+    unsigned long long najwieksza=1;
 
     public:
-    Liczby (int iloscLiczb)
+    Liczby (unsigned long long iloscLiczb)
     {
-        for (int i=0; i<iloscLiczb; i++)
+        for (unsigned long long i=0; i<iloscLiczb; i++)
         {
-            long long wczytanaDana;
+            unsigned long long wczytanaDana;
             cin >> wczytanaDana;
             liczby.push_back(wczytanaDana);
+            if (liczby[i]>>najwieksza)
+            {
+                najwieksza=liczby[i];
+            }
         }
+    //cout << najwieksza;
     }
 
-    long long wyznaczNWW()
+    unsigned long long wyznaczNWW()
     {
-        long long nww=1;
+        unsigned long long nww=najwieksza;
         bool flaga=false;
 
         while (flaga != true)
         {
             flaga=true;
-            for (int i=0; i<liczby.size(); i++)
+            for (unsigned long long i=0; i<liczby.size(); i++)
             {
                 if(nww%liczby[i] != 0)
                 {
@@ -36,7 +42,7 @@ class Liczby
             }
             if (flaga == false)
             {
-                nww++;
+                nww+=najwieksza;
             }
         }
 
@@ -57,6 +63,7 @@ int main()
             cin >> iloscLiczb;
             Liczby zestaw(iloscLiczb);
             cout << zestaw.wyznaczNWW() << endl;
+
 
         }
     return 0;
